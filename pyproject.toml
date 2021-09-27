@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "pi-image-sender"
+version = "0.0.0"
+description = "Raspberry Pi's camera image sending package"
+license = "MIT"
+authors = ["k-tahiro <tahiro.k.ad@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/k-tahiro/pi-image-sender"
+keywords = []
+
+[tool.poetry-dynamic-versioning]
+enable = true
+
+[tool.poetry.dependencies]
+picamera = ">=1.13"
+python = ">=3.7"
+
+[tool.poetry.dev-dependencies]
+tox = "*"
+pytest = "*"
+pytest-cov = "*"
+pre-commit = "*"
+mypy = "*"
+black = "*"
+
+[tool.black]
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 88
+multi_line_output = 3
+use_parentheses = true
+
+[tool.isort]
+ensure_newline_before_comments = true
+force_grid_wrap = 0
+include_trailing_comma = true
+line_length = 88
+multi_line_output = 3
+use_parentheses = true
+
+[build-system]
+requires = ["poetry"]
+build-backend = "poetry.masonry.api"
