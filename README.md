@@ -1,2 +1,2 @@
 # pi-image-sender
-Image sending package especially for Raspberry Pi
+Raspberry Pi's camera image sending package
