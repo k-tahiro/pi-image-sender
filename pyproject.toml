@@ -13,6 +13,7 @@ enable = true
 
 [tool.poetry.dependencies]
 picamera = ">=1.13"
+Pillow = ">=8.3.2"
 python = ">=3.7"
 
 [tool.poetry.dev-dependencies]
