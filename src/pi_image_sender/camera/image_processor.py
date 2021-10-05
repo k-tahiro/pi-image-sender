@@ -20,13 +20,7 @@ class ImageProcessor(threading.Thread):
             if self.event.wait(1):
                 try:
                     self.stream.seek(0)
-                    # Read the image and do some processing on it
-                    # Image.open(self.stream)
-                    # ...
-                    # ...
-                    # Set done to True if you want the script to terminate
-                    # at some point
-                    # self.owner.done=True
+                    self.process()
                 finally:
                     # Reset the stream and event
                     self.stream.seek(0)
@@ -35,3 +29,13 @@ class ImageProcessor(threading.Thread):
                     # Return ourselves to the available pool
                     with self.owner.lock:
                         self.owner.pool.append(self)
+
+    def process(self):
+        # Read the image and do some processing on it
+        # Image.open(self.stream)
+        # ...
+        # ...
+        # Set done to True if you want the script to terminate
+        # at some point
+        # self.owner.done=True
+        pass

@@ -2,16 +2,14 @@
 
 import threading
 
-from .image_processor import ImageProcessor
-
 
 class ProcessOutput(object):
-    def __init__(self):
+    def __init__(self, processor_class, n_threads: int = 4):
         self.done = False
         # Construct a pool of 4 image processors along with a lock
         # to control access between threads
         self.lock = threading.Lock()
-        self.pool = [ImageProcessor(self) for i in range(4)]
+        self.pool = [processor_class(self) for i in range(n_threads)]
         self.processor = None
 
     def write(self, buf):
